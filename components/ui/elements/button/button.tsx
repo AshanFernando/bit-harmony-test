@@ -1,5 +1,6 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import styles from './button.module.scss';
+import { DotsLoader } from '@teambit/teaching.ui.elements.dots-loader';
 
 export type ButtonProps = {
   variant: 'primary' | 'secondary';
@@ -20,7 +21,7 @@ export function Button({
       disabled={isLoading || disabled}
       {...rest}
     >
-      {isLoading ? 'Loading...' : children}
+      isLoading ? <DotsLoader /> : children;
     </button>
   );
 }
